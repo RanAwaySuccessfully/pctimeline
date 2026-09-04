@@ -1,0 +1,138 @@
+/*
+@font-face {
+	font-family: "Asap Condensed";
+	src: url("fonts/asapcondensed-regular.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Asap Condensed"; font-weight: 500;
+	src: url("fonts/asapcondensed-medium.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Asap Condensed"; font-weight: bold;
+	src: url("fonts/asapcondensed-bold.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Asap";
+	src: url("fonts/asap-regular.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Asap"; font-style: italic;
+    src: url("fonts/asap-italic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Asap"; font-weight: bold;
+    src: url("fonts/asap-semibold.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Asap"; font-weight: bold; font-style: italic;
+    src: url("fonts/asap-semibolditalic.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "DejaVu Sans Mono";
+	src: url("fonts/dejavusansmono.woff") format("woff");
+}
+
+@font-face {
+	font-family: "DejaVu Sans Mono"; font-weight: bold;
+	src: url("fonts/dejavusansmono-bold.woff") format("woff");
+}
+*/
+
+body {
+	font-family: sans-serif;
+	margin: 0;
+	background: #131313;
+	color: #FFF;
+}
+
+header {
+	margin: 3rem auto 0;
+	background: #304144;
+	border-radius: 7px;
+	border-bottom: 2px solid #000;
+	max-width: 800px;
+	padding: 0.1rem 1rem;
+    position: relative;
+}
+
+header h1 {
+	margin: 0;
+	text-align: right;
+	line-height: 1;
+	font-size: 48px;
+	font-weight: 500;
+	font-family: "Asap Condensed", sans-serif;
+	text-shadow: 0 3px 0 #000;
+	color: #FFF;
+}
+
+header h1 span.color {
+	color: #79BBBD;
+	font-weight: bold;
+}
+
+.subtitle {
+    position: absolute;
+    right: 0;
+    top: -35px;
+    color: #FFF;
+    text-shadow: 0 1px 0 #444;
+}
+
+section, footer {
+	background: #242424;
+	margin: 0 auto 2rem;
+	border-radius: 10px;
+	border-bottom: 2px solid #000;
+	max-width: 750px;
+	padding: 1.25rem 0.5rem 1rem 1.5rem;
+}
+
+nav {
+	text-align: left;
+	margin-top: 0;
+}
+
+section:first-of-type {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+footer {
+	padding-top: 1rem;
+	font-style: italic;
+	margin-bottom: 3rem;
+}
+
+h2, h3 {
+	color: #7994BD;
+}
+
+section h2 {
+	margin: 0;
+}
+
+section p {
+	margin: 1rem 0 0;
+}
+
+a {
+	color: #9DD5DE;
+}
+
+a:hover {
+	color: #FFF;
+}
+
+@media all and (max-width: 700px) {
+	section, footer, nav {
+		border-left: 0;
+	}
+}

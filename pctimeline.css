@@ -1,0 +1,75 @@
+.vegacontainer {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+}
+
+#infocolumn {
+    border: dotted #FFF;
+    border-width: 0 0 0 1px;
+    height: calc(100% - 3px);
+    width: 1px;
+    display: block;
+    position: absolute;
+    left: 15px;
+    pointer-events: none;
+}
+
+#infocolumn.invisible {
+    visibility: hidden;
+}
+
+.loading {
+    background: #333;
+    color: #FFF;
+    text-align: center;
+    padding: 1rem 0;
+    width: 200px;
+}
+
+.infoarea {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 125%;
+}
+
+.infoarea :nth-child(2n - 1) {
+    text-align: right;
+}
+
+#custombuttons {
+    margin-right: 26px;
+    float: right;
+}
+
+input[type=file] {
+    display: none;
+}
+
+button, label[for=localfilebutton] {
+    border: none;
+    background: #333;
+    font-weight: bold;
+    font-size: 13px;
+    color: #FFF;
+    padding: 2px 8px;
+    display: inline-block;
+}
+
+button.main {
+    font-size: 16px;
+}
+
+button.active {
+    text-decoration: underline;
+}
+
+button:active {
+    background: #555;
+}
+
+.customvegalinks {
+    text-decoration: underline;
+}

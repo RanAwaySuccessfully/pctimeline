@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>PCTimeline</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="pctimeline.css">
+	<script src="https://cdn.jsdelivr.net/npm/vega@5.29.0"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.25.0"></script>
+	<script src="pctimeline.js" defer></script>
+</head>
+<body>
+
+	<header>
+		<h1><span class="color">PC</span>Timeline</h1>
+	</header>
+
+	<section>
+		<p>Here's a neat little page where you can see a timeline of each component that added and removed from a computer. Hover over each bar in the chart below to see more details.</p>
+		<p>You can also use the "custom" tab if you want! Just hit the "Export file" button to grab an .xlsx (Excel Spreadsheet) file that you can edit!</p>
+		<br>
+		<div id="mainbuttons">
+			<button onclick="loadPC(this, 'PCTimeline.xlsx')" class="active main">Example PC</button>
+			<button onclick="customPC(this)" class="main">Custom</button>
+			<div id="custombuttons" style="display: none;">
+				<button onclick="exportExcel()">Export file</button>
+				<label for="localfilebutton">Import file</label>
+				<input id="localfilebutton" type="file" accept="xlsx" onchange="importExcel(this)" />
+			</div>
+		</div>
+		<div class="vegacontainer" onmousemove="hoverInfo(event, this)">
+			<div id="vis">
+				<div class="loading">Loading...</div>
+			</div>
+			<div id="infocolumn" class="invisible"></div>
+		</div>
+		<div class="infoarea">
+			<div>Total price*:&nbsp;</div><div id="totalprice">-</div>
+			<div>Computer name:&nbsp;</div><div id="computername">-</div>
+		</div>
+		<p>* Estimated price of all components on that line. Components that are missing or do not have price information are not counted. You can change which items are counted by using Shift+Click on each bar.</p>
+		<p><strong>NOTE:</strong> Left clicking on the links in the chart above doesn't work for some odd reason I haven't managed to figure out yet. Middle-click and right-click should work fine.</p>
+		<br>
+		<p>Powered by: <a href="https://vega.github.io/vega-lite/">Vega-Lite</a>, <a href="https://docs.sheetjs.com/">SheetJS</a></p>
+		</ul>
+	</section>
+
+</body>
+</html>

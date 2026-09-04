@@ -1,0 +1,123 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 425,
+    "data": {
+        "name": "main",
+        "values": []
+    },
+    "layer": [
+        {   
+            "params": [
+                {
+                    "name": "price_selection",
+                    "select": {
+                        "type": "point",
+                        "toggle": true
+                    }
+                }
+            ],
+            "mark": "bar",
+            "encoding": {
+                "y": {
+                    "field": "name",
+                    "type": "nominal",
+                    "axis": {
+                        "domain": true,
+                        "grid": true,
+                        "ticks": false,
+                        "labels": true,
+                        "labelFontSize": 11,
+                        "labelPadding": 6
+                    },
+                    "sort": {
+                        "field": "category_index",
+                        "op": "min",
+                        "order": "ascending"
+                    },
+                    "title": null
+                },
+                "x": {
+                    "field": "start",
+                    "type": "temporal",
+                    "timeUnit": "yearmonthdate",
+                    "axis": {
+                        "format": "%b-%y",
+                        "domain": true,
+                        "grid": true,
+                        "ticks": true,
+                        "labels": true,
+                        "labelFontSize": 11,
+                        "labelPadding": 6
+                    },
+                    "title": null
+                },
+                "x2": {
+                    "field": "end"
+                },
+                "color": {
+                    "condition": {
+                        "param": "price_selection",
+                        "type": "nominal",
+                        "field": "category",
+                        "title": "Categories",
+                        "legend": {
+                            "padding": 0,
+                            "labelFontSize": 11,
+                            "rowPadding": 8,
+                            "symbolOpacity": 0.9,
+                            "symbolType": "square"
+                        }
+                    },
+                    "value": "grey"
+                },
+                "tooltip": [
+                    {
+                        "field": "name",
+                        "type": "nominal",
+                        "title": "Name:"
+                    },
+                    {
+                        "field": "category",
+                        "type": "nominal",
+                        "title": "Category:"
+                    },
+                    {
+                        "field": "formatted_price",
+                        "type": "nominal",
+                        "title": "Price:"
+                    },
+                    {
+                        "field": "condition",
+                        "type": "nominal",
+                        "title": "Condition:"
+                    },
+                    {
+                        "field": "formatted_start",
+                        "type": "nominal",
+                        "title": "Purchased:"
+                    },
+                    {
+                        "field": "formatted_end",
+                        "type": "nominal",
+                        "title": "In use until:"
+                    },
+                    {
+                        "field": "status",
+                        "type": "nominal",
+                        "title": "Status:"
+                    },
+                    {
+                        "field": "notes",
+                        "type": "nominal",
+                        "title": "Notes:"
+                    }
+                ]
+            }
+        }
+    ],
+    "config": {
+        "view": {
+            "stroke": null
+        }
+    }
+}
